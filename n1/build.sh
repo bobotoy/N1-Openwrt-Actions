@@ -7,7 +7,7 @@ fi
 
 TMPDIR=openwrt_rootfs
 OUTDIR=opt/imgs
-IMG_NAME=zorz/openwrt-aarch64
+IMG_NAME=bobotoy/openwrt-aarch64
 
 [ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
 mkdir -p "$OUTDIR"
