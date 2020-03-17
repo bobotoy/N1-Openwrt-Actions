@@ -1,4 +1,6 @@
 # 云编译N1 Openwrt固件 Docker
+使用lean’s lede源代码
+主要集成插件ShadowSocksrPlus+ passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
 默认ip已更换为192.168.2.1
 
 # 食用方法
@@ -10,7 +12,7 @@
 ----docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:0317  /sbin/init  
 
 # 鸣谢
-借鉴引用以下代码，感谢各位大佬付出  
+借鉴引用以下大佬代码  
 https://github.com/fyglinfo/actions-openwrt-passwall  
 https://github.com/P3TERX/Actions-OpenWrt  
 https://github.com/Lienol/openwrt-package  
