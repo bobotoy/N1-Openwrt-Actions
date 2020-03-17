@@ -4,7 +4,7 @@
 默认ip已更换为192.168.2.1
 
 # 食用方法
-举例： 
+举例:  
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
 ----②.导入软路由docker包：  
 ----gzip -dc docker-img-openwrt-aarch64-0317.gz | docker load  
