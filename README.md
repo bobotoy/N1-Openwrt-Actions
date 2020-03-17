@@ -14,7 +14,7 @@
 (0317替换为最新M/D)
 
 # 鸣谢
-借鉴引用以下大佬代码 
+借鉴引用以下大佬代码  
 https://github.com/coolsnowwolf/lede  
 https://github.com/Lienol/openwrt-package  
 https://github.com/fyglinfo/actions-openwrt-passwall  
