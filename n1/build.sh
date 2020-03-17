@@ -26,9 +26,9 @@ docker build -t ${IMG_NAME}:${TAG} . && \
 rm -f  openwrt-armvirt-64-default-rootfs-patched.tar && \
 rm -rf "$TMPDIR" && \
 docker save ${IMG_NAME}:${TAG} | pigz -9 > $OUTDIR/docker-img-openwrt-aarch64-${TAG}.gz && \
-docker login -u ${{ secrets.DOCKER_HUB_NAME }} -p ${{ secrets.DOCKER_HUB_PWD }} && \
+#docker login -u ${{ secrets.DOCKER_HUB_NAME }} -p ${{ secrets.DOCKER_HUB_PWD }} && \
 #gzip -dc docker-img-openwrt-aarch64-${TAG}.gz | docker load && \
-docker push ${IMG_NAME}:${TAG}
+#docker push ${IMG_NAME}:${TAG}
 
 
 
