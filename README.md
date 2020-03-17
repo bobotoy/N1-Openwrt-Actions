@@ -6,10 +6,10 @@
 # 食用方法
 ----①.将docker-img-openwrt-aarch64-**** (特殊符号替换为最新M/D).gz文件上传至N1的/root目录   
 ----②.导入软路由docker包：  
-----gzip -dc docker-img-openwrt-aarch64-****(*替换为M/D).gz | docker load  
+----gzip -dc docker-img-openwrt-aarch64-**** (特殊符号替换为最新M/D).gz | docker load  
 ----或者docker pull unifreq/openwrt-aarch64:****（如果未按第①步事先下载并上传镜像包的话）  
 ----③运行容器：  
-----docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:****(*替换为M/D)  /sbin/init  
+----docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:**** (特殊符号替换为最新M/D)  /sbin/init  
 
 # 鸣谢
 借鉴引用以下大佬代码  
