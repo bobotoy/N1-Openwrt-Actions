@@ -1,7 +1,8 @@
 # 云编译N1 Openwrt固件 Docker
 使用lean’s lede源代码  
 主要集成插件ShadowSocksrPlus+ passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
-默认ip已更换为192.168.2.1
+默认ip已更换为192.168.2.1  
+增加N1作为旁路由的防火墙规则  
 
 # 食用方法
 举例:  
