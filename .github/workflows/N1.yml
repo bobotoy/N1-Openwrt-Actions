@@ -160,7 +160,6 @@ jobs:
       with:
         name: docker-n1
         path: n1/opt/imgs
-
    - name: Upload - push to Dockerhub
      run: |
         cd n1/opt/imgs
