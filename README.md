@@ -3,8 +3,8 @@
 
 食用方法
 下载并导入openwrt镜像包
-----①.将docker-img-openwrt-aarch64-****.gz文件上传至N1的/root目录
-----②.ssh到N1
+1.将docker-img-openwrt-aarch64-****.gz文件上传至N1的/root目录
+2.ssh到N1
 ----③.导入软路由docker包：
 ----gzip -dc docker-img-openwrt-aarch64-r9.10.24.gz | docker load
 ----或者docker pull bobotoy/openwrt-aarch64:****
