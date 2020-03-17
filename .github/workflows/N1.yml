@@ -150,7 +150,7 @@ jobs:
       run: |
         cp openwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz n1
         
-    - name: Image - build docker image
+    - name: Image - build docker image and push to dockerhub
       run: |
         cd n1
         sudo bash build.sh $(date +%m%d)
