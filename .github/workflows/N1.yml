@@ -160,11 +160,6 @@ jobs:
       with:
         name: docker-n1
         path: n1/opt/imgs
-   - name: Upload - push to Dockerhub
-     run: |
-        cd n1/opt/imgs
-        docker login -u ${{ secrets.DOCKER_HUB_NAME }} -p ${{ secrets.DOCKER_HUB_PWD }}
-        gzip -dc docker-img-openwrt-aarch64-$(date +%m%d).gz | docker load
-        docker push bobotoy/openwrt-aarch64:$(date +%m%d)
+
         
         
