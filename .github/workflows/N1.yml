@@ -161,5 +161,8 @@ jobs:
         name: docker-n1
         path: n1/opt/imgs
 
-        
-        
+#    - name: Login - DockerHub
+#      run:  docker login -u ${{secrets.DOCKER_HUB_NAME}} -p ${{secrets.DOCKER_HUB_PWD}}
+      
+#    - name: push - Docker
+#      run: 
