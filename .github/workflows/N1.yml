@@ -164,4 +164,7 @@ jobs:
         name: docker-n1
         path: n1/opt/imgs
         
+    - name: Push - docker hub
+      run: docker push ${{secrets.DOCKER_REPO}}:$(date +%m%d)
+        
         
