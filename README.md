@@ -2,9 +2,12 @@
 默认ip已更换为192.168.2.1
 
 # 食用方法
-1.将docker-img-openwrt-aarch64-r9.10.24.gz文件上传至N1的/root目录  
-2.gzip -dc docker-img-openwrt-aarch64-r9.10.24.gz | docker load 或者 docker pull bobotoy/openwrt-aarch64:****  
-3.docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:****  /sbin/init  
+----①.将docker-img-openwrt-aarch64-r9.10.24.gz文件上传至N1的/root目录   
+----②.导入软路由docker包：  
+----gzip -dc docker-img-openwrt-aarch64-r9.10.24.gz | docker load  
+----或者docker pull unifreq/openwrt-aarch64:r9.10.24（如果未按第①步事先下载并上传镜像包的话）  
+----③运行容器：  
+----docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:****  /sbin/init  
 
 # 鸣谢
 借鉴引用以下代码，感谢各位大佬付出
