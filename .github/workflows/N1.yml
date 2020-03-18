@@ -18,7 +18,7 @@ on:
       - 'N1.config'
       - 'n1/**'
   schedule:
-    - cron: 0 3 * * ？
+    - cron: 0 19 * * *
 #  watch:
 #    types: [started]
 
