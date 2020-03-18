@@ -153,7 +153,7 @@ jobs:
     - name: Login - DockerHub
       run:  docker login -u ${{secrets.DOCKER_HUB_NAME}} -p ${{secrets.DOCKER_HUB_PWD}}
 
-    - name: Image - build docker image
+    - name: Image - build&push docker image
       run: |
         cd n1
         sudo bash build.sh $(date +%m%d)
@@ -163,8 +163,6 @@ jobs:
       with:
         name: docker-n1
         path: n1/opt/imgs
-        
-    - name: Push - docker hub
-      run: docker push ${{secrets.DOCKER_REPO}}:$(date +%m%d)
+    
         
         
