@@ -22,12 +22,12 @@ rm -f "$TMPDIR/etc/bench.log" && \
 echo "17 3 * * * /etc/coremark.sh" >> "$TMPDIR/etc/crontabs/root" && \
 (cd "$TMPDIR" && tar cf ../openwrt-armvirt-64-default-rootfs-patched.tar .) && \
 rm -f DockerImg-OpenwrtArm64-${TAG}.gz && \
-docker build -t ${IMG_NAME}:${TAG} . && \
+docker build -t ${IMG_NAME}:${TAG} -t ${IMG_NAME}:latest . && \
 rm -f  openwrt-armvirt-64-default-rootfs-patched.tar && \
 rm -rf "$TMPDIR" && \
 docker save ${IMG_NAME}:${TAG} | pigz -9 > $OUTDIR/docker-img-openwrt-aarch64-${TAG}.gz  && \
 docker push ${IMG_NAME}:${TAG}  && \
-docker push ${IMG_NAME}
+docker push ${IMG_NAME}:latest
 
 
 
