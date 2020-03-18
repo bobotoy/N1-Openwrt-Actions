@@ -2,8 +2,8 @@
 使用lean’s lede源代码  
 主要集成插件ShadowSocksrPlus+ passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
 默认ip已更换为192.168.2.1  
-增加N1作为旁路由的防火墙规则  
-
+添加N1作为旁路由的防火墙规则  iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE  
+固件每天凌晨3时自动编译并上传dockerhub仓库  
 # 食用方法
 举例:  
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
