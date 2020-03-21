@@ -89,8 +89,7 @@ jobs:
        rm -rfv package/lean/luci-app-kodexplorer
        rm -rfv package/lean/luci-app-pppoe-relay
        rm -rfv package/lean/luci-app-pptp-server
-       rm -rfv package/lean/luci-app-v2ray-server
-       
+       rm -rfv package/lean/luci-app-v2ray-server   
        
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
