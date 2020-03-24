@@ -32,6 +32,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
+  FILE_NAME: n1测试版
 
 jobs:
   build:
