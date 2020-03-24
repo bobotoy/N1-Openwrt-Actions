@@ -14,3 +14,5 @@ sed -i "/timezone='CST-8'/a set system.@system[-1].zonename='Asia/Shanghai'" ./p
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 # Debug kpr adapt aarch64
 sed -i 's/,arm/,aarch64/' package/luci-app-koolproxyR/Makefile
+#修改版本号
+sed -i 's/OpenWrt/Bin AutoBuild $(date "+%Y.%m.%d") @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
