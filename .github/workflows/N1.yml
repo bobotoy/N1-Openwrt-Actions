@@ -17,13 +17,13 @@ on:
     paths:
       - 'N1.config'
       - 'n1/**'
-  schedule:
-    - cron: 0 19 * * *
-#  watch:
-#    types: [started]
+#  schedule:
+#    - cron: 0 19 * * *
+  watch:
+    types: [started]
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: N1.config
   DIY_SH: diy.sh
@@ -32,6 +32,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
+  FILE_NAME: N1-Openwrt-$(date +%m%d)
 
 jobs:
   build:
@@ -63,8 +64,14 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
 
-    - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+    - name: Clone source code # 克隆的源代码
+      id: openwrt
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        cd openwrt
+        useVersionInfo=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
+        echo "::set-env name=useVersionInfo::$useVersionInfo"
+        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
       
     - name: Clone other packages
       run: |
@@ -80,8 +87,8 @@ jobs:
       run: |
        cd openwrt
        echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
-       ./scripts/feeds update -a 
-       
+       ./scripts/feeds update -a
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
               
@@ -164,5 +171,18 @@ jobs:
         name: docker-n1
         path: n1/opt/imgs
     
-        
-  
+    - name: Create release
+      uses: ncipollo/release-action@v1
+      with:
+        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
+        allowUpdates: true
+        tag: N1-Openwrt
+        commit: master
+        token: ${{ secrets.RELEASES_TOKEN }}
+        body: |
+          当前使用版本:（编译前的最后一次源码更新记录）
+          ${{ env.useVersionInfo }}
+        artifacts: ${{ env.FIRMWARE }}/*
+
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
