@@ -164,3 +164,18 @@ jobs:
         name: docker-n1
         path: n1/opt/imgs
     
+    - name: Create release
+      uses: ncipollo/release-action@v1
+      with:
+        name: ${{ env.DATE }} 🚀 n1开发版 | 自动编译
+        allowUpdates: true
+        tag: n1开发版
+        commit: master
+        token: ${{ secrets.RELEASES_TOKEN }}
+        body: |
+          当前使用版本:（编译前的最后一次源码更新记录,源码来自https://github.com/coolsnowwolf/lede ）
+          ${{ env.useVersionInfo }}
+        artifacts: ${{ env.FIRMWARE }}/*
+
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
