@@ -174,7 +174,7 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 n1开发版 | 自动编译
+        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
         allowUpdates: true
         tag: n1开发版
         commit: master
