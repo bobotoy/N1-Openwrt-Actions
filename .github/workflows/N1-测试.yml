@@ -32,7 +32,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
-  FILE_NAME: n1测试版
+  FILE_NAME: N1-Openwrt-$(date +%m%d)
 
 jobs:
   build:
@@ -176,7 +176,7 @@ jobs:
       with:
         name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
         allowUpdates: true
-        tag: n1开发版
+        tag: N1-Openwrt
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
