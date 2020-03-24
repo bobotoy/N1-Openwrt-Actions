@@ -16,7 +16,7 @@
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
 ----②.导入软路由docker包：  
 ----gzip -dc docker-img-openwrt-aarch64-0317.gz | docker load  
-----或者docker pull bobotoy/openwrt-aarch64:latest（推荐直接拉取使用）  
+----或者docker pull bobotoy/openwrt-aarch64:latest（推荐跳过②①直接拉取使用）  
 ----③运行容器：  
 ----docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:latest /sbin/init  
 
