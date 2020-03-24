@@ -80,16 +80,7 @@ jobs:
       run: |
        cd openwrt
        echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
-       ./scripts/feeds update -a
-       rm -rfv feeds/lienol/lienol/ipt2socks
-       rm -rfv feeds/lienol/lienol/shadowsocksr-libev
-       rm -rfv feeds/lienol/lienol/pdnsd-alt
-       rm -rfv feeds/lienol/lienol/luci-app-verysync
-       rm -rfv feeds/lienol/package/verysync
-       rm -rfv package/lean/luci-app-kodexplorer
-       rm -rfv package/lean/luci-app-pppoe-relay
-       rm -rfv package/lean/luci-app-pptp-server
-       rm -rfv package/lean/luci-app-v2ray-server   
+       ./scripts/feeds update -a 
        
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
