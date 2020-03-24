@@ -1,5 +1,5 @@
 # 云编译N1 Openwrt固件 Docker
-注：本仓库纯属个人根据自己的设备配置使用，未有在任何论坛或者群组发布固件
+注：本仓库纯属个人根据自己的设备配置使用，未有在任何论坛或者群组发布固件  
 使用lean’s lede源代码  
 主要集成插件ShadowSocksrPlus+ passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
 默认ip已更换为192.168.2.1  
