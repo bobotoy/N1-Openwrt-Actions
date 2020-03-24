@@ -23,8 +23,8 @@ on:
     types: [started]
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt.git
-  REPO_BRANCH: dev-lean-lede
+  REPO_URL: https://github.com/coolsnowwolf/lede.git
+  REPO_BRANCH: master
   CONFIG_FILE: N1.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
