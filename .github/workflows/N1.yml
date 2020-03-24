@@ -17,10 +17,10 @@ on:
     paths:
       - 'N1.config'
       - 'n1/**'
-#  schedule:
-#    - cron: 0 19 * * *
-  watch:
-    types: [started]
+  schedule:
+    - cron: 0 19 * * *
+#  watch:
+#    types: [started]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
