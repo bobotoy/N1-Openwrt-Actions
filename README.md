@@ -4,7 +4,9 @@
 默认ip已更换为192.168.2.1  
 添加N1作为旁路由的防火墙规则  iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE  
 固件每天凌晨3时自动编译并上传dockerhub仓库  bobotoy/openwrt-aarch64:latest  
-20200321基本完美适合自用，无意间解决kpr无法启动的问题，虽然我不用，但不能没有  
+20200321基本完美适合自用，解决kpr无法启动的问题，虽然我不用，但不能没有  
+20200324lienol插件仓库代码更新，取消删除与lean插件重复代码  
+
 # 食用方法
 举例:  
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
