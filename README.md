@@ -24,7 +24,7 @@
 ----docker run  -d --restart always --network macnet --ip 192.168.2.1  --privileged bobotoy/openwrt-aarch64:latest /sbin/init  
 
 
-# 鸣谢
+# 鸣谢 📢
 借鉴引用以下大佬代码  
 https://github.com/coolsnowwolf/lede  
 https://github.com/Lienol/openwrt-package  
