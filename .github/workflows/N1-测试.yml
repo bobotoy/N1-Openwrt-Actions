@@ -182,7 +182,7 @@ jobs:
         body: |
           当前使用版本:（编译前的最后一次源码更新记录）
           ${{ env.useVersionInfo }}
-        artifacts: ${{ env.FIRMWARE }}/*,n1/opt/imgs/*,openwrt/.config
+        artifacts: "${{ env.FIRMWARE }}/*,n1/opt/imgs/*,openwrt/.config,openwrt/bin/packages/aarch64_generic"
 
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
