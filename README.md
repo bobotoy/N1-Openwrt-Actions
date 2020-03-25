@@ -1,9 +1,9 @@
 # 云编译N1 Openwrt固件 Docker
 注：本仓库纯属个人根据自己的设备配置使用，未有在任何论坛或者群组发布固件  
 使用lean’s lede源代码  
-✈️主要集成插件ShadowSocksrPlus+ passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
+主要集成插件✈️ passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
 🖥️默认ip已更换为192.168.2.1  
-🔥添加N1作为旁路由的防火墙规则  iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE  
+添加N1作为旁路由的防🔥墙规则  iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE  
 📅固件每天凌晨3时自动编译并上传dockerhub仓库  bobotoy/openwrt-aarch64:latest  
 20200321  
 ----解决kpr无法启动的问题，虽然我不用，但不能没有  
