@@ -163,7 +163,7 @@ jobs:
     - name: Image - build&push docker image
       run: |
         cd n1
-        sudo bash build.sh $(date +%m%d)
+        sudo bash build-test.sh test
 
     - name: Upload - push to artifact file
       uses: actions/upload-artifact@master
