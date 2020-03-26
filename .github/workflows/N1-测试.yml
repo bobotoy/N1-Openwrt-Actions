@@ -20,13 +20,13 @@ on:
       - '.github/workflows/N1-测试.yml'
 #  schedule:
 #    - cron: 0 19 * * *
-  watch:
-    types: [started]
+#  watch:
+#    types: [started]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: N1-TEST.config
+  CONFIG_FILE: N1.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: false
@@ -124,7 +124,7 @@ jobs:
         make -j$(nproc) || make -j1 V=s
         echo "::set-output name=status::success"
 
-    - name: Upload bin directory
+    - name: Upload bin packages directory
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
