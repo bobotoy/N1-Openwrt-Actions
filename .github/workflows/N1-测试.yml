@@ -187,8 +187,9 @@ jobs:
 
     - name: RELEASE
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
       with:
+        name: ${{ env.DATE }} 🚀 / N1-Openwrt-test | 自动编译 
+        tag_name: $(date +%m%d)
         files: |
             ${{ env.FIRMWARE }}/*
             n1/opt/imgs/*
