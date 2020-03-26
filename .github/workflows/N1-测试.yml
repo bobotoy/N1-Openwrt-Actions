@@ -189,11 +189,15 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-          files: |
+        files: |
             ${{ env.FIRMWARE }}/*
             n1/opt/imgs/*
             openwrt/.config
             openwrt/bin/packages/*
+        body: |
+          当前使用版本:（编译前的最后一次源码更新记录）
+          ${{ env.useVersionInfo }}
+      env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: WeChat notification
