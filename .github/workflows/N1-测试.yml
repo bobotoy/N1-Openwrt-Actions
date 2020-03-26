@@ -15,7 +15,7 @@ on:
     branches:
       - master
     paths:
-      - 'N1.config'
+      - 'N1-TEST.config'
       - 'n1/**'
 #  schedule:
 #    - cron: 0 19 * * *
@@ -25,7 +25,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: N1.config
+  CONFIG_FILE: N1-TEST.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: true
