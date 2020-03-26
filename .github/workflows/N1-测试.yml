@@ -184,16 +184,15 @@ jobs:
 #          ${{ env.useVersionInfo }}
 #        artifacts: "${{ env.FIRMWARE }}/*,n1/opt/imgs/*,openwrt/.config,openwrt/bin/packages/*"
 
-     - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
+    - name: RELEASE
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
           files: |
             ${{ env.FIRMWARE }}/*
             n1/opt/imgs/*
             openwrt/.config
             openwrt/bin/packages/*
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: WeChat notification
