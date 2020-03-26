@@ -28,7 +28,7 @@ env:
   CONFIG_FILE: N1.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
@@ -171,18 +171,30 @@ jobs:
         name: docker-n1
         path: n1/opt/imgs
     
-    - name: Create release
-      uses: ncipollo/release-action@v1
-      with:
-        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
-        allowUpdates: true
-        tag: $(date +%m%d)
-        commit: master
-        token: ${{ secrets.RELEASES_TOKEN }}
-        body: |
-          当前使用版本:（编译前的最后一次源码更新记录）
-          ${{ env.useVersionInfo }}
-        artifacts: "${{ env.FIRMWARE }}/*,n1/opt/imgs/*,openwrt/.config,openwrt/bin/packages/*"
+#    - name: Create release
+#     uses: ncipollo/release-action@v1
+#      with:
+#        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
+#        allowUpdates: true
+#        tag: $(date +%m%d)
+#        commit: master
+#        token: ${{ secrets.RELEASES_TOKEN }}
+#        body: |
+#          当前使用版本:（编译前的最后一次源码更新记录）
+#          ${{ env.useVersionInfo }}
+#        artifacts: "${{ env.FIRMWARE }}/*,n1/opt/imgs/*,openwrt/.config,openwrt/bin/packages/*"
+
+     - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ${{ env.FIRMWARE }}/*
+            n1/opt/imgs/*
+            openwrt/.config
+            openwrt/bin/packages/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
