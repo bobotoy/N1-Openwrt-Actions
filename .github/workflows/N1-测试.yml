@@ -17,6 +17,7 @@ on:
     paths:
       - 'N1-TEST.config'
       - 'n1/**'
+      - '.github/workflows/N1-测试.yml'
 #  schedule:
 #    - cron: 0 19 * * *
   watch:
@@ -28,7 +29,7 @@ env:
   CONFIG_FILE: N1-TEST.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
