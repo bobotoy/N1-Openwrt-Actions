@@ -16,7 +16,6 @@ gzip -dc openwrt-armvirt-64-default-rootfs.tar.gz | ( cd "$TMPDIR" && tar xf - )
 cp -f patches/rc.local "$TMPDIR/etc/" && \
 cp -f patches/cpustat "$TMPDIR/usr/bin/" && \
 chmod 755 "$TMPDIR/usr/bin/cpustat" && \
-cat patches/luci-admin-status-index-html.patch | (cd "$TMPDIR/usr/lib/lua/luci/view/admin_status/" && patch -p0) && \
 sed -e "s/net.nf_conntrack_max net.ipv4.netfilter.ip_conntrack_max/net.netfilter.nf_conntrack_max net.nf_conntrack_max net.ipv4.netfilter.ip_conntrack_max \| head -n 1/" -i "$TMPDIR/usr/lib/lua/luci/view/admin_status/index.htm" && \
 rm -f "$TMPDIR/etc/bench.log" && \
 echo "17 3 * * * /etc/coremark.sh" >> "$TMPDIR/etc/crontabs/root" && \
