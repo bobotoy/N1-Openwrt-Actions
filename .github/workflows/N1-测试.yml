@@ -162,7 +162,7 @@ jobs:
        allowUpdates: true
        tag: $(date +%m%d)
        commit: master
-       artifacts: "${{ env.PACKAGE }}/*,openwrt/.config"
+       artifacts: ${{ env.PACKAGE }}/*
        token: ${{ secrets.RELEASES_TOKEN }}
        body: |
           当前使用版本:（编译前的最后一次源码更新记录）
