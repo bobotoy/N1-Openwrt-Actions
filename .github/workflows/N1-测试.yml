@@ -155,18 +155,18 @@ jobs:
 #        name: docker-n1
 #        path: n1/opt/imgs
     
-   - name: Create release
-    uses: ncipollo/release-action@v1
-    with:
+    - name: Create release
+      uses: ncipollo/release-action@v1
+      with:
        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
-        allowUpdates: true
-        tag: $(date +%m%d)
-        commit: master
-        token: ${{ secrets.RELEASES_TOKEN }}
-        body: |
+       allowUpdates: true
+       tag: $(date +%m%d)
+       commit: master
+       artifacts: "${{ env.PACKAGE }}/*,openwrt/.config"
+       token: ${{ secrets.RELEASES_TOKEN }}
+       body: |
           当前使用版本:（编译前的最后一次源码更新记录）
           ${{ env.useVersionInfo }}
-        artifacts: "${{ env.PACKAGE }}/*,openwrt/.config"
 
 #    - name: RELEASE
 #      uses: softprops/action-gh-release@v1
@@ -183,5 +183,3 @@ jobs:
 #env:
 #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
