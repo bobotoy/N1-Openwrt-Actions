@@ -160,7 +160,7 @@ jobs:
       with:
        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
        allowUpdates: true
-       tag: $(date +%m%d)
+       tag: test
        commit: master
        artifacts: ${{ env.PACKAGE }}/*
        token: ${{ secrets.RELEASES_TOKEN }}
