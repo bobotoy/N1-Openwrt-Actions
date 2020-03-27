@@ -91,18 +91,6 @@ jobs:
      #若使用./scripts/diffconfig.sh > config.seed生成的差异文件恢复扩展为完整的.config配置文件请删除下行注释符号
      #   make defconfig
 
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
-
-    - name: Download package
-      id: package
-      run: |
-        cd openwrt
-        make download -j8
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
-   
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
