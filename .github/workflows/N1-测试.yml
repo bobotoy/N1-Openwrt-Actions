@@ -162,10 +162,11 @@ jobs:
        allowUpdates: true
        tag: test
        commit: master
-       artifacts: ${{ env.PACKAGE }}/*
+       artifacts: "openwrt/.config , n1/patches/*"
        token: ${{ secrets.RELEASES_TOKEN }}
        body: |
             测试发布
+#            ${{ env.PACKAGE }}/*
 
 #    - name: RELEASE
 #      uses: softprops/action-gh-release@v1
