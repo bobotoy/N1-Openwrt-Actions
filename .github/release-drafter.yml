@@ -1,1 +1,3 @@
 tag-template: 'v$NEXT_PATCH_VERSION'
+template: |
+ "* No changes"
