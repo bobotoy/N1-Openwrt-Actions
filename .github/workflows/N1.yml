@@ -17,6 +17,7 @@ on:
     paths:
       - 'N1.config'
       - 'n1/**'
+      - '.github/workflows/N1.yml'
   schedule:
     - cron: 0 19 * * *
 #  watch:
@@ -182,7 +183,7 @@ jobs:
         body: |
           当前使用版本:（编译前的最后一次源码更新记录）
           ${{ env.useVersionInfo }}
-        artifacts: ${{ env.FIRMWARE }}/*
+        artifacts: "${{ env.FIRMWARE }}/* , openwrt/.config , n1/opt/imgs/*"
 
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
