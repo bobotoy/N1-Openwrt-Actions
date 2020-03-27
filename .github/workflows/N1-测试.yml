@@ -88,7 +88,7 @@ jobs:
       with:
         name: ${{ env.DATE }} 🚀 / N1-Openwrt-test | 自动编译
         allowUpdates: true
-        tag:  ${{ github.DATE +%m%d}}
+        tag:  N1-Openwrt-$(date +%m%d)
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
