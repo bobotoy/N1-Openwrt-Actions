@@ -12,8 +12,9 @@
 ----增加编译完成自动发布RLEASE功能和微信提醒功能  
 20200325  
 ----精简若干Release文件，保留openwrt-armvirt-64-default-rootfs.tar.gz  
-----增加发布：📦插件packages 配置.config 容器docker-img
-
+----增加发布：📦 配置.config 容器docker-img
+20200325
+----fix some bugs  about  N1.yml 精简部分代码  
 # 食用方法🥢
 举例:  
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
