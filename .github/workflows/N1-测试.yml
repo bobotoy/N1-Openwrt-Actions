@@ -88,15 +88,19 @@ jobs:
       with:
         name: ${{ env.DATE }} 🚀 / N1-Openwrt-test | 自动编译
         allowUpdates: true
-        tag:  N1-Openwrt-$(date +%m%d)
+        tag:  N1-Openwrt-test
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
           CESHI
         artifacts: "openwrt/.config , n1/patches/*"
-
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
+ 
+    - name: Create release update_release_draft
+      uses: release-drafter/release-drafter@v5
+      with:
+          config-name: release-drafter.yml
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
   
