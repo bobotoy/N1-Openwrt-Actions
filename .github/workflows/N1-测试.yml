@@ -72,15 +72,7 @@ jobs:
         useVersionInfo=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
         echo "::set-env name=useVersionInfo::$useVersionInfo"
         echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
-      
-    - name: Update Feeds
-      run: |
-       cd openwrt
-       ./scripts/feeds update -a
-
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
-              
+                    
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
@@ -96,7 +88,7 @@ jobs:
       with:
         name: ${{ env.DATE }} 🚀 / N1-Openwrt-test | 自动编译
         allowUpdates: true
-        tag: $(date +%m%d)
+        tag:  ${{ github.ref }}
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
