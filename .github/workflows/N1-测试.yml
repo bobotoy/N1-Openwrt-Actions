@@ -162,7 +162,7 @@ jobs:
        allowUpdates: true
        tag: test
        commit: master
-       artifacts: "openwrt/.config , n1/patches/*"
+       artifacts: "${{ env.PACKAGE }}/* , openwrt/.config , n1/patches/*"
        token: ${{ secrets.RELEASES_TOKEN }}
        body: |
             测试发布
