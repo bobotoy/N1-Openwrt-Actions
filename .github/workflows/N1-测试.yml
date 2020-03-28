@@ -72,6 +72,7 @@ jobs:
         useVersionInfo=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
         echo "::set-env name=useVersionInfo::$useVersionInfo"
         echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
+        echo "::set-env name=tag_name::v$(date +%m%d)"
                     
     - name: Load custom configuration
       run: |
@@ -88,7 +89,7 @@ jobs:
       with:
         name: ${{ env.DATE }} 🚀 / N1-Openwrt-test | 自动编译
         allowUpdates: true
-        tag: N1-Openwrt
+        tag: ${{ env.tag_name }}
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
