@@ -16,7 +16,7 @@
 20200327  
 ----Fix some bugs about N1.yml 精简部分代码  
 20200328  
-----保留每日自动发布的固件不再替换更新    
+----Release保留每日自动发布的固件不再替换更新    
 # 食用方法🥢
 举例:  
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
