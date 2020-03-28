@@ -9,7 +9,7 @@
 ----解决kpr无法启动的问题，虽然我不用，但不能没有  
 20200324  
 ----lienol插件仓库代码更新，取消删除与lean插件重复代码  
-----增加编译完成自动发布RLEASE功能和微信提醒功能  
+----增加编译完成自动发布RLEASE和微信提醒功能  
 20200325  
 ----精简若干Release文件，保留openwrt-armvirt-64-default-rootfs.tar.gz  
 ----增加发布：📦 配置.config 容器docker-img  
