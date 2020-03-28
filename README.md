@@ -14,7 +14,7 @@
 ----精简若干Release文件，保留openwrt-armvirt-64-default-rootfs.tar.gz  
 ----增加发布：📦 配置.config 容器docker-img  
 20200327  
-----Fix some bugs about N1.yml 精简部分代码  
+----Fix bugs about N1.yml 精简部分代码  
 20200328  
 ----Release保留每日自动发布的固件不再替换更新    
 # 食用方法🥢
