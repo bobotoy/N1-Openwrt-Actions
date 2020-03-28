@@ -72,7 +72,7 @@ jobs:
         useVersionInfo=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
         echo "::set-env name=useVersionInfo::$useVersionInfo"
         echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
-        echo "::set-env name=tag_name::V$(date +%m).$(date +%d)"
+        echo "::set-env name=tag_name::V$(date "+%m.%d)"
                     
     - name: Load custom configuration
       run: |
