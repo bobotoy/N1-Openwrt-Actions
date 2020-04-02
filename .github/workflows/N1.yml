@@ -82,7 +82,7 @@ jobs:
         git clone https://github.com/pymumu/smartdns.git openwrt/package/smartdns
         git clone https://github.com/Apocalypsor/luci-app-smartdns.git openwrt/package/luci-app-smartdns
         git clone https://github.com/frainzy1477/luci-app-clash.git openwrt/package/luci-app-clash
-        git clone https://github.com/Leo-Jo/luci-app-koolproxyR.git openwrt/package/luci-app-koolproxyR
+        git clone https://github.com/project-openwrt/luci-app-koolproxyR.git openwrt/package/luci-app-koolproxyR
         git clone https://github.com/vernesong/OpenClash.git && mv OpenClash/luci-app-openclash openwrt/package/luci-app-openclash
 
     - name: Update Feeds
