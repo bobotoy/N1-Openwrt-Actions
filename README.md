@@ -20,7 +20,7 @@
 20200401   
 ----增加AirPlay2插件编译  
 20200402  
-----更新替换luci-app-koolproxyR插件源，修复编译错误
+----更新替换luci-app-koolproxyR插件源，修复编译错误  
 ----修改运行代码参数修复AirPlay2无法运行错误  
 
 # 食用方法🥢
