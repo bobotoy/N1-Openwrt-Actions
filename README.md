@@ -30,7 +30,7 @@
 ----gzip -dc docker-img-openwrt-aarch64-0317.gz | docker load  
 ----或者docker pull bobotoy/openwrt-aarch64:latest（推荐跳过②①直接拉取使用）  
 ----③运行容器：  
-----docker run -d --device=/dev/snd:/dev/snd --restart always --network macnet --ip 192.168.2.1 --privileged bobotoy/openwrt-aarch64:0402 /sbin/init  
+----docker run -d --device=/dev/snd:/dev/snd --restart always --network macnet --ip 192.168.2.1 --privileged bobotoy/openwrt-aarch64:latest /sbin/init  
 # 鸣谢 📢
 借鉴引用以下大佬代码  
 https://github.com/coolsnowwolf/lede  
