@@ -20,7 +20,7 @@
 20200401   
 ----增加AirPlay2插件编译  
 20200402  
-----更新luci-app-koolproxyR插件  
+----更新替换luci-app-koolproxyR插件源，修复编译错误  
 # 食用方法🥢
 举例:  
 ----①.将docker-img-openwrt-aarch64-0317.gz文件上传至N1的/root目录   
