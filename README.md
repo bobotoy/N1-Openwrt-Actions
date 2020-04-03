@@ -1,4 +1,5 @@
 # 云编译N1 Openwrt固件 Docker
+![Build OpenWrt](https://github.com/bobotoy/N1-Openwrt-Actions/workflows/Build%20OpenWrt/badge.svg)  
 注：本仓库纯属个人根据自己的设备配置使用，未有在任何论坛或者群组发布固件  
 使用lean’s lede源代码  
 主要集成插件✈️ShadowSocksR Plus+ AirPlay2 Passwall clash openclash koolproxyrPlus+ smartdns AdGuardHome...  
