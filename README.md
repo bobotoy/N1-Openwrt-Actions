@@ -23,6 +23,8 @@
 20200402  
 ----更新替换luci-app-koolproxyR插件源，修复编译错误  
 ----修改运行代码参数修复AirPlay2无法运行错误  
+20200409  
+----修复编译中ffmpeg-full及ffmpeg-audio-dec依赖冲突错误，取消基本无用的Mwan3分流助手插件、polipo网页缓存代理插件、kcptun客户端插件  
 
 # 食用方法🥢
 举例:  
