@@ -24,7 +24,7 @@
 ----更新替换luci-app-koolproxyR插件源，修复编译错误  
 ----修改运行代码参数修复AirPlay2无法运行错误  
 20200409  
-----取消libffmpeg-audio-dec编译，修复编译中与libffmpeg-full的编译冲突  
+----取消libffmpeg-audio-dec编译，修复编译中与libffmpeg-full的冲突  
 ----取消基本无用的Mwan3分流助手插件、polipo网页缓存代理插件、kcptun客户端插件  
 ----清除Dockerhub仓库历史镜像，上传最新0409版镜像
 
