@@ -155,7 +155,7 @@ jobs:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
         
-            - name: Upload - push to artifact file
+    - name: Upload - push to artifact file
       uses: actions/upload-artifact@master
       with:
         name: docker-n1
