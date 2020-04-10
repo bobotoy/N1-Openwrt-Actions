@@ -1,4 +1,4 @@
-name: Build OpenWrt
+name: Build OpenWrt test
 
 on:
 #  release:
