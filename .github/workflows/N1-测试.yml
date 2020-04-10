@@ -1,11 +1,3 @@
-#=================================================
-# https://github.com/P3TERX/Actions-OpenWrt
-# Description: Build OpenWrt using GitHub Actions
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=================================================
-
 name: Build OpenWrt
 
 on:
@@ -17,7 +9,7 @@ on:
     paths:
       - 'N1.config'
       - 'n1/**'
-      - '.github/workflows/N1.yml'
+      - '.github/workflows/N1-测试.yml'
   schedule:
     - cron: 0 19 * * *
 #  watch:
@@ -28,7 +20,7 @@ env:
   REPO_BRANCH: master
   CONFIG_FILE: N1.config
   DIY_SH: diy.sh
-  FREE_UP_DISK: false
+  FREE_UP_DISK: true
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
@@ -147,23 +139,7 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
-        
-    - name: Docker file - copy Docker file
-      run: |
-        cp ${{ env.FIRMWARE }}/* n1
-    - name: Login - DockerHub
-      run:  docker login -u ${{secrets.DOCKER_HUB_NAME}} -p ${{secrets.DOCKER_HUB_PWD}}
-
-    - name: Image - build&push docker image
-      run: |
-        cd n1
-        sudo bash build.sh $(date +%m%d)
-    - name: Upload - push to artifact file
-      uses: actions/upload-artifact@master
-      with:
-        name: docker-n1
-        path: n1/opt/imgs
-    
+           
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
@@ -175,7 +151,7 @@ jobs:
         body: |
           当前使用版本:（编译前的最后一次源码更新记录）
           ${{ env.useVersionInfo }}
-        artifacts: "${{ env.FIRMWARE }}/* , openwrt/.config , n1/opt/imgs/*"
+        artifacts: "${{ env.FIRMWARE }}/* , openwrt/.config"
 
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
