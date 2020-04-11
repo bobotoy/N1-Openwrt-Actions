@@ -9,9 +9,9 @@ on:
     paths:
       - 'N1.config'
       - 'n1/**'
-      - '.github/workflows/N1-测试.yml'
-  schedule:
-    - cron: 0 19 * * *
+#     - '.github/workflows/N1-测试.yml'
+# schedule:
+#   - cron: 0 19 * * *
 #  watch:
 #    types: [started]
 
