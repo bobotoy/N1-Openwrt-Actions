@@ -30,8 +30,8 @@
 ----清除Dockerhub仓库历史镜像  
 20200410  
 ----修复生成docker错误  
-20200421
-----ssr和passwall源码都撤了，固件暂停每日自动编译，dockerhub仓库最新完整版固件bobotoy/openwrt-aarch64:0416
+20200421  
+----ssr和passwall源码都撤了，固件暂停每日自动编译，dockerhub仓库最新完整版固件bobotoy/openwrt-aarch64:0416  
 
 # 食用方法🥢
 举例:  
