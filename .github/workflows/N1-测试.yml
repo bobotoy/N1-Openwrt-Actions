@@ -27,7 +27,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: N1.config
-  DIY_SH: diy.sh
+  DIY_SH: diy-test.sh
   FREE_UP_DISK: true
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: true
@@ -82,10 +82,16 @@ jobs:
         git clone https://github.com/frainzy1477/luci-app-clash.git openwrt/package/luci-app-clash
         git clone https://github.com/project-openwrt/luci-app-koolproxyR.git openwrt/package/luci-app-koolproxyR
         git clone https://github.com/vernesong/OpenClash.git && mv OpenClash/luci-app-openclash openwrt/package/luci-app-openclash
+    - name: Load custom feeds
+      run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+
     - name: Update Feeds
       run: |
        cd openwrt
        echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
+       chmod +x $DIY_SH
+        ../$DIY_SH
        ./scripts/feeds update -a
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
@@ -94,9 +100,6 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_SH
-        cd openwrt
-        ../$DIY_SH
      #若使用./scripts/diffconfig.sh > config.seed生成的差异文件恢复扩展为完整的.config配置文件请删除下行注释符号
      #   make defconfig
 
